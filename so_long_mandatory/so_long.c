@@ -6,7 +6,7 @@
 /*   By: jiyseo <jiyseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 14:11:43 by jiyseo            #+#    #+#             */
-/*   Updated: 2022/07/03 03:30:12 by jiyseo           ###   ########.fr       */
+/*   Updated: 2022/07/03 04:37:02 by jiyseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,10 @@ int	main(int ac, char *av[])
 	t_game	game;
 
 	if (ac != 2)
+	{
 		ft_printf("Map is missing.\n");
+		return (0);
+	}
 	if (!game_init(&game, av[1]))
 		return (0);
 	mlx_hook(game.win, X_EVENT_KEY_PRESS, 1, &press_key, &game);
