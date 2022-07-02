@@ -6,7 +6,7 @@
 /*   By: jiyseo <jiyseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 00:16:47 by jiyseo            #+#    #+#             */
-/*   Updated: 2022/07/03 03:30:42 by jiyseo           ###   ########.fr       */
+/*   Updated: 2022/07/03 06:39:15 by jiyseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	*img_load(void *mlx, char *file)
 	image = mlx_xpm_file_to_image(mlx, file, &width, &height);
 	if (!image)
 	{
-		printf("%s image file error!\n", file);
+		ft_printf("%s image file error!\n", file);
 		exit(0);
 	}
 	return (image);
