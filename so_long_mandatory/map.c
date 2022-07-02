@@ -6,7 +6,7 @@
 /*   By: jiyseo <jiyseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 00:28:00 by jiyseo            #+#    #+#             */
-/*   Updated: 2022/07/03 03:30:12 by jiyseo           ###   ########.fr       */
+/*   Updated: 2022/07/03 05:11:23 by jiyseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	map_load(t_game *game, char *filename)
 	ret = map_read(game, filename);
 	if (ret < 0)
 		return (ret);
-	if (ret == ERR_MAP || map_check(game) == ERR_MAP)
+	if (map_check(game) == ERR_MAP)
 		return (ERR_MAP);
 	if (map_state(game) == ERR_MAP)
 		return (ERR_MAP);
