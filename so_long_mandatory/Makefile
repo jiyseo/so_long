@@ -6,7 +6,7 @@
 #    By: jiyseo <jiyseo@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/20 14:10:13 by jiyseo            #+#    #+#              #
-#    Updated: 2022/07/03 03:06:59 by jiyseo           ###   ########.fr        #
+#    Updated: 2022/07/03 13:56:34 by jiyseo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ $(LIB_FT):
 $(LIB_PR):
 	make -C $(DIR_PR)
 
-$(BIN): $(LIB_MLX) $(LIB_FT) $(OBJS)
+$(BIN): $(LIB_MLX) $(LIB_FT) $(LIB_PR) $(OBJS)
 	$(CC) -o $@ $(OBJS) -L./$(DIR_FT) -lft -L./$(DIR_PR) -lftprintf $(LIB_MLX)
 
 %.o: %.c
@@ -56,3 +56,9 @@ clean:
 	make clean -C $(DIR_MLX)
 	make clean -C $(DIR_FT)
 	make clean -C $(DIR_PR)
+
+fclean:
+	rm -f *.o $(LIB_MLX) $(BIN)
+	make clean -C $(DIR_MLX)
+	make fclean -C $(DIR_FT)
+	make fclean -C $(DIR_PR)

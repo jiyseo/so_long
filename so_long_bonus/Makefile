@@ -6,7 +6,7 @@
 #    By: jiyseo <jiyseo@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/20 14:10:13 by jiyseo            #+#    #+#              #
-#    Updated: 2022/07/03 03:14:36 by jiyseo           ###   ########.fr        #
+#    Updated: 2022/07/03 13:56:33 by jiyseo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,14 +24,14 @@ SRCS	= so_long_bonus.c \
 		  map_state_bonus.c \
 		  image_bonus.c \
 		  key_bonus.c \
-		  get_next_line_bonus.c \
-		  get_next_line_utils_bonus.c
+		  get_next_line.c \
+		  get_next_line_utils.c
 OBJS	= $(SRCS:.c=.o)
 CC		= gcc
 CFLAGS	= -Wall
 INCS	= -I./$(DIR_MLX) -I./$(DIR_FT) -I./$(DIR_PR)/
 
-.PHONY: clean
+.PHONY: fclean
 
 all: $(BIN)
 
@@ -45,8 +45,8 @@ $(LIB_FT):
 $(LIB_PR):
 	make -C $(DIR_PR)
 
-$(BIN): $(LIB_MLX) $(LIB_FT) $(OBJS)
-	$(CC) -o $@ $(OBJS) -L./$(DIR_FT) -lft -L./$(DIR_PR) -lftprintf $(LIB_MLX)
+$(BIN): $(LIB_MLX) $(LIB_FT) $(LIB_PR) $(OBJS)
+	$(CC) -o $@ $(OBJS) -L./$(DIR_FT) -lft  -L./$(DIR_PR) -lftprintf $(LIB_MLX)
 
 %.o: %.c
 	$(CC) $(CFLAGS) $(INCS) -c $< -o $@
@@ -56,3 +56,9 @@ clean:
 	make clean -C $(DIR_MLX)
 	make clean -C $(DIR_FT)
 	make clean -C $(DIR_PR)
+
+fclean:
+	rm -f *.o $(LIB_MLX) $(BIN)
+	make clean -C $(DIR_MLX)
+	make fclean -C $(DIR_FT)
+	make fclean -C $(DIR_PR)
