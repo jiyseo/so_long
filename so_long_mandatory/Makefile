@@ -6,7 +6,7 @@
 #    By: jiyseo <jiyseo@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/20 14:10:13 by jiyseo            #+#    #+#              #
-#    Updated: 2022/07/03 13:56:34 by jiyseo           ###   ########.fr        #
+#    Updated: 2022/07/03 15:32:45 by jiyseo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ SRCS	= so_long.c \
 		  get_next_line_utils.c
 OBJS	= $(SRCS:.c=.o)
 CC		= gcc
-CFLAGS	= -Wall
+CFLAGS	= -Wall -Wextra -Werror
 INCS	= -I./$(DIR_MLX) -I./$(DIR_FT) -I./$(DIR_PR)/
 
 .PHONY: clean

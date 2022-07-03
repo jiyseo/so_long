@@ -6,7 +6,7 @@
 /*   By: jiyseo <jiyseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 14:11:43 by jiyseo            #+#    #+#             */
-/*   Updated: 2022/07/03 04:37:02 by jiyseo           ###   ########.fr       */
+/*   Updated: 2022/07/03 15:42:15 by jiyseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	game_exit(t_game *game)
 
 int	game_close(int key_code, t_game *game)
 {
+	if (!key_code || !game)
+		exit(0);
 	exit(0);
 }
 
