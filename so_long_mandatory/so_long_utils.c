@@ -6,7 +6,7 @@
 /*   By: jiyseo <jiyseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 01:29:15 by jiyseo            #+#    #+#             */
-/*   Updated: 2022/07/03 04:00:44 by jiyseo           ###   ########.fr       */
+/*   Updated: 2022/07/03 15:03:43 by jiyseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ int	game_init(t_game *game, char *map_file)
 
 	game->mlx = mlx_init();
 	game->img = img_init(game->mlx);
-	game->str_map = NULL;
-	game->str_map2 = NULL;
 	ret = map_load(game, map_file);
 	if (!game_error(ret, map_file))
 		return (0);

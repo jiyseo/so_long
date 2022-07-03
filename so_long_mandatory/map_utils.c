@@ -6,7 +6,7 @@
 /*   By: jiyseo <jiyseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 01:25:58 by jiyseo            #+#    #+#             */
-/*   Updated: 2022/07/03 03:30:12 by jiyseo           ###   ########.fr       */
+/*   Updated: 2022/07/03 15:03:48 by jiyseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	map_init(t_game *game)
 	game->width = 0;
 	game->zomma_pt.x = 0;
 	game->zomma_pt.y = 0;
+	game->str_map = NULL;
+	game->str_map2 = NULL;
 	game->all_col = 0;
 	game->col_cnt = 0;
 	game->walk_cnt = 0;
